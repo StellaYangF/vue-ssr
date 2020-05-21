@@ -6,7 +6,8 @@
   "scripts": {
     "client:dev": "webpack-dev-server --config ./build/webpack.client.js --mode development",
     "client:build": "webpack --config ./build/webpack.client.js --mode production",
-    "server:build": "webpack --config ./build/webpack.server.js"
+    "server:build": "webpack --config ./build/webpack.server.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
@@ -33,12 +34,16 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "cz-conventional-changelog": "^3.2.0",
-    "husky": "^4.2.5"
+    "cz-conventional-changelog": "^3.2.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
