@@ -267,7 +267,7 @@ export default ctx => {
   });
 };
 ```
-
+> Tip: **asyncData** 为组件内部定义，服务端调用的方法。因为服务端只可用 Vue API 中的 **beforeCreate**, **created**
 
 ### 构建 Web 服务
 #### 引入依赖包
