@@ -23,7 +23,7 @@ router.get('/', async ctx => {
       resolve(data);
     })
   })
-})
+});
 
 app.use(router.routes());
 app.use(static(path.join(__dirname, 'dist')));

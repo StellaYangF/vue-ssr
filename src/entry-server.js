@@ -11,7 +11,7 @@ export default ctx => {
       if (matches.length == 0) {
         reject({ code: 404 });
       }
-      resolve(app);
+      // resolve(app);
       Promise.all(
        matches.map(component => {
           if (component.asyncData) {
